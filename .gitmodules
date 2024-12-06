@@ -1,0 +1,9 @@
+[submodule "source"]
+	path = source
+	url = https://github.com/MatthewFro191919/source
+[submodule "assets"]
+	path = assets
+	url = https://github.com/MatthewFro191919/assets
+[submodule "example_mods"]
+	path = example_mods
+	url = https://github.com/MatthewFro191919/example_mods
