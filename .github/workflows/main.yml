@@ -1,6 +1,6 @@
 # THE FOLLOWING ACTIONS CODE IS FROM THE PSYCH ENGINE REPO: https://github.com/ShadowMario/FNF-PsychEngine/blob/main/.github/workflows/main.yml
 
-name: Windows
+name: Build
 
 # Controls when the action will run.
 on:
@@ -21,7 +21,7 @@ jobs:
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@main
 
       - uses: krdlab/setup-haxe@v1
         with:
@@ -38,7 +38,7 @@ jobs:
       - name: Compile
         run: haxelib run lime build windows --app-version="4.0.0-${{ github.run_id}}"
       - name: Publish Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@main
         with:
           name: ReleaseBuildWindows
           path: export/release/windows/bin
@@ -47,7 +47,7 @@ jobs:
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@main
 
       - uses: krdlab/setup-haxe@v1
         with:
@@ -64,7 +64,7 @@ jobs:
       - name: Compile
         run: haxelib run lime build windows -debug
       - name: Publish Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@main
         with:
           name: DebugBuildWindows
           path: export/debug/windows/bin
@@ -74,7 +74,7 @@ jobs:
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@main
 
       - uses: krdlab/setup-haxe@v1
         with:
@@ -95,7 +95,7 @@ jobs:
       - name: Compile
         run: haxelib run lime build linux --app-version="4.0.0-${{ github.run_id}}"
       - name: Publish Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@main
         with:
           name: ReleaseBuildLinux
           path: export/release/linux/bin
@@ -104,7 +104,7 @@ jobs:
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@main
 
       - uses: krdlab/setup-haxe@v1
         with:
@@ -125,7 +125,7 @@ jobs:
       - name: Compile
         run: haxelib run lime build linux --debug
       - name: Publish Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@main
         with:
           name: DebugBuildLinux
           path: export/debug/linux/bin
@@ -135,9 +135,9 @@ jobs:
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@main
 
-      - uses: krdlab/setup-haxe@v4
+      - uses: krdlab/setup-haxe@main
         with:
           haxe-version: 4.2.5
       # Runs a set of commands using the runners shell
@@ -152,7 +152,7 @@ jobs:
       - name: Compile
         run: haxelib run lime build macos --app-version="4.0.0-${{ github.run_id}}"
       - name: Publish Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@main
         with:
           name: ReleaseBuildMacOs
           path: export/release/macos/bin
@@ -161,9 +161,9 @@ jobs:
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@main
 
-      - uses: krdlab/setup-haxe@v4
+      - uses: krdlab/setup-haxe@main
         with:
           haxe-version: 4.2.5
       # Runs a set of commands using the runners shell
@@ -178,7 +178,7 @@ jobs:
       - name: Compile
         run: haxelib run lime build macos --debug
       - name: Publish Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@main
         with:
           name: DebugBuildMacOs
           path: export/debug/macos/bin
